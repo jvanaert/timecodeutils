@@ -1,0 +1,36 @@
+{
+  "name": "timecodeutils",
+  "version": "0.0.1",
+  "description": "Convert timecode(hh:mm:ss) to seconds and vice versa",
+  "main": "index.js",
+  "scripts": {
+    "test": "./node_modules/.bin/mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/jvanaert/timecodeutils.git"
+  },
+  "keywords": [
+    "node",
+    "timecode"
+  ],
+  "author": "Jeroen van Aert <jeroenvanaert@gmail.com> (https://github.com/jvanaert)",
+  "contributors": [
+    "Ilja Strobbe <ilja.strobbe@gmail.com> (https://github.com/istrobes)"
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jvanaert/timecodeutils/issues"
+  },
+  "devDependencies": {
+    "coffee-script": "~1.6.3",
+    "mocha": "~1.12.1",
+    "assert": "~0.4.9"
+  },
+  "engines": {
+    "node": ">= 0.8.0"
+  },
+  "dependencies": {
+    "chai": "~1.7.2"
+  }
+}
