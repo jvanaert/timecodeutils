@@ -2,9 +2,11 @@
   "name": "timecodeutils",
   "version": "0.0.1",
   "description": "Convert timecode(hh:mm:ss) to seconds and vice versa",
-  "main": "index.js",
+  "main": "lib/index.js",
   "scripts": {
-    "test": "./node_modules/.bin/mocha"
+    "test": "./node_modules/.bin/mocha",
+    "build": "coffee --bare --compile --output lib src/index.coffee",
+    "prepublish": "coffee --bare --compile --output lib src/index.coffee"
   },
   "repository": {
     "type": "git",

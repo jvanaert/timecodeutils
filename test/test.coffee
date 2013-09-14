@@ -1,5 +1,5 @@
 assert = require('chai').assert
-timecodeutils = require "../"
+timecodeutils = require "../src/index"
 
 describe "Check interface", ->
 	it "should implement TCToSeconds", ->
