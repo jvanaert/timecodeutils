@@ -8,7 +8,7 @@ class TimecodeUtils
 	@secondsToTC = (seconds) ->
 		return undefined unless seconds?
 		return undefined if seconds is ""
-		
+
 		if seconds >= 0
 			hours = @_pad( parseInt((seconds/(60*60)), 10))
 			seconds -= (hours * 60 * 60)
@@ -20,6 +20,7 @@ class TimecodeUtils
 
 	@TCToSeconds= (tc) ->
 		tcregex =  /^(?:(?:([01]?\d|2[0-3]):)?([0-5]?\d):)?([0-5]?\d)$/
+		return undefined unless typeof(tc) is "string"
 		matches = tc.match(tcregex)
 		if matches?
 			hours = parseInt(matches[1], 10)
@@ -27,6 +28,6 @@ class TimecodeUtils
 			secs = parseInt(matches[3], 10)
 			(hours * 60 * 60) + (mins * 60) + secs
 		else
-			null
+			undefined
 
 module.exports = TimecodeUtils

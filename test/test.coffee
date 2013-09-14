@@ -30,10 +30,17 @@ describe "convert seconds to timecode", ->
 
 describe "convert timecode to seconds", ->
 	it "should handle valid cases", ->
-		assert.equal "00:00:00", timecodeutils.secondsToTC(0)
-		assert.equal "00:00:01", timecodeutils.secondsToTC(1)
-		assert.equal "00:01:00", timecodeutils.secondsToTC(60)
-		assert.equal "01:00:00", timecodeutils.secondsToTC(60*60)
+		assert.equal 0, timecodeutils.TCToSeconds("00:00:00")
+		assert.equal 1, timecodeutils.TCToSeconds("00:00:01")
+		assert.equal 60, timecodeutils.TCToSeconds("00:01:00")
+		assert.equal 60*60, timecodeutils.TCToSeconds("01:00:00")
+	it "should handle invalid cases", ->
+		assert.equal undefined, timecodeutils.TCToSeconds(-1)
+		assert.equal undefined, timecodeutils.TCToSeconds("-1")
+		assert.equal undefined, timecodeutils.TCToSeconds("a")
+		assert.equal undefined, timecodeutils.TCToSeconds("99:99:99")
+		assert.equal undefined, timecodeutils.TCToSeconds("00:99:99")
+		assert.equal undefined, timecodeutils.TCToSeconds("00:00:99")
 
 describe "pad method", ->
 	it "should prepend 0 if number <= 9", ->
