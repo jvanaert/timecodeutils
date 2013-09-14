@@ -25,6 +25,8 @@ describe "convert seconds to timecode", ->
 		assert.equal timecodeutils.secondsToTC(-1), undefined
 		assert.equal timecodeutils.secondsToTC(undefined), undefined
 		assert.equal timecodeutils.secondsToTC(null), undefined
+		assert.equal timecodeutils.secondsToTC("a"), undefined
+		assert.equal timecodeutils.secondsToTC(""), undefined
 
 describe "convert timecode to seconds", ->
 	it "should handle valid cases", ->

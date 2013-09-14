@@ -7,6 +7,8 @@ class TimecodeUtils
 
 	@secondsToTC = (seconds) ->
 		return undefined unless seconds?
+		return undefined if seconds is ""
+		
 		if seconds >= 0
 			hours = @_pad( parseInt((seconds/(60*60)), 10))
 			seconds -= (hours * 60 * 60)
